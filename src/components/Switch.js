@@ -21,8 +21,8 @@ const SwitchControl = ({
 );
 
 SwitchControl.defaultProps = {
-  onText: 'ON',
-  offText: 'OFF',
+  onText: 'ВКЛ',
+  offText: 'ВЫКЛ',
   onChange: () => {}
 };
 

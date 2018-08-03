@@ -54,11 +54,36 @@ class Nav extends Component {
             <p>Сотрудники</p>
           </Link>
         </li>
+        <li className={location.pathname === '/points' ? 'active' : null}>
+          <Link to="/points">
+            <i className="pe-7s-vector"></i>
+            <p>ЭКТ</p>
+          </Link>
+        </li>
+        <li className={location.pathname === '/map' ? 'active' : null}>
+          <Link to="/map">
+            <i className="pe-7s-map-marker"></i>
+            <p>Карта</p>
+          </Link>
+        </li>		
+		 {/*
+        <li className={location.pathname === '/users' ? 'active' : null}>
+          <Link to="/users">
+            <i className="pe-7s-map-marker"></i>
+            <p>Users</p>
+          </Link>
+        </li>				
 		
 	  
 	  
-	  {/*
-	  
+
+         <li className={this.isPathActive('/calendar') ? 'active' : null}>
+          <Link to="/calendar">
+            <i className="pe-7s-date"></i>
+            <p>Календарь</p>
+          </Link>
+        </li>
+	
         <li className={this.isPathActive('/components') || this.state.componentMenuOpen ? 'active' : null}>
           <a onClick={() => this.setState({ componentMenuOpen: !this.state.componentMenuOpen })}
             data-toggle="collapse">
@@ -164,13 +189,8 @@ class Nav extends Component {
             <p>Charts</p>
           </Link>
         </li>
-        <li className={this.isPathActive('/calendar') ? 'active' : null}>
-          <Link to="/calendar">
-            <i className="pe-7s-date"></i>
-            <p>Calendar</p>
-          </Link>
-        </li>
-		*/}
+
+	 	   	*/}
 		
       </ul>
     );

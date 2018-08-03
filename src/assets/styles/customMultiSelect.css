@@ -1,0 +1,194 @@
+.checkbox-personalized * {
+  box-sizing: border-box;
+}
+.checkbox-personalized input[type=checkbox] {
+  display: none;
+}
+.checkbox-personalized label {
+  margin: 0 auto;
+  display: block;
+  padding: 5px 0;
+}
+.checkbox-personalized label .check {
+  margin: 3px 5px;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #999;
+  border-radius: 2px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+.checkbox-personalized input[type=checkbox]:checked + label .check {
+  background: #1e95fb;
+  transition: all 0.2s ease-in;
+  border: 1px solid #1e95fb;
+}
+.checkbox-personalized input[type=checkbox]:checked + label .check:after {
+    content: '';
+    display: block;
+    width: 5px;
+    height: 11px;
+    border: solid #FFF;
+    margin: 2px 7px;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+.checkbox-personalized input[type=checkbox]:indeterminate + label .check {
+  background: #939ba2;
+  transition: all 0.2s ease-in;
+  border: 1px solid #939ba2;
+}
+.checkbox-personalized input[type=checkbox]:indeterminate + label .check:after {
+  content: '';
+  display: block;
+  height: 11px;
+  border: solid #FFF;
+  margin: 2px 7px;
+  border-width: 0 2px 0 0;
+  transform: rotate(90deg);
+}
+
+.custom-select-body-class > tbody > tr > td:first-child {
+  padding: 0 !important;
+}
+
+.custom-select-header-class > thead > tr > th:first-child {
+  padding: 0 !important;
+}
+
+#avCheckboxHeader{
+	margin-top: 32px;
+}
+
+.avThActions{
+	vertical-align: top !important;
+	padding-top: 8px;
+}
+
+.avMarginSide{
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.av-custom-modal{
+	width: 70%;
+	height: 70%;
+}
+
+.avInputValid{
+	border-color: rgba(37, 38, 95, 0.2);
+}
+
+.avInputInvalid{
+	border-color: #fb6350;
+}
+
+.avSpanPrompt{
+	float: right;
+    padding-top: 10px;
+	font-size: 12px;
+	color: #fb6350;
+	font-family: "Roboto","Helvetica Neue",Arial,sans-serif;
+	display: block;
+}
+
+.avSpanPromptHide{
+	display: none;
+}
+
+.avNoSidePaddings{
+	padding-left: 0px !important;
+	padding-right: 0px !important;
+}
+
+.avMarginBottom15{
+	margin-bottom: 15px;
+}
+
+.avClear{
+	clear: both;
+}
+
+.avActionI{
+  cursor: pointer;
+  margin-right: 5px;
+  margin-left:  5px;
+}
+
+.avUl {
+  list-style: none !important;
+  text-align: left !important;
+  width: 100% !important;
+  margin: 0 !important;
+}
+.avUlHeader {
+  text-align: center;
+  width: 540px;
+  margin: auto !important;
+}
+
+.avUlHeader>li:hover {
+  background-color: #F5F5F5;
+}
+
+.form-inline .form-control {
+  width: 50%;
+  margin-left: 0px;
+}
+
+.done {
+  color: red;
+  text-decoration: line-through;
+}
+
+.undone {
+  color: #61DAFB;
+}
+
+.icon {
+  margin: 6px 10px 6px 0;
+  cursor: pointer;
+}
+
+.avList-group-item{
+	border: 0px !important;
+}
+
+.avLineLeft{
+	width: 30%;
+	font-weight: bold;
+}
+
+.avLineRight{
+	width: 80%;
+}
+
+.avCheckboxRights{
+	pagging-left: 20px;
+	width: 18px;
+	height: 18px;
+}
+
+
+.avSwitch{
+	height: 30px;
+}
+
+.avFloatLeft{
+	float: left;
+}
+
+.avRightsDiv{
+	height: 100px;
+}
+
+.avFullWidth{
+	width: 100%;
+}
+
+.avPaddingLeft20{
+	padding-left: 20px;
+}

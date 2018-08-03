@@ -1,0 +1,59 @@
+.multiStepSvg{
+	cursor: pointer;
+}
+
+.avUl{
+    text-align: center;
+    width: 540px;
+    margin: auto !important;
+}
+
+.avTitle{
+    margin: 0px 0 35px !important;
+    text-align: center;
+}
+
+.avShow{
+	display: block;
+}
+
+.avShow{
+	display: none;
+}
+
+text {  
+    fill: #c96; font-size:32px;
+	font-family: Futura Condensed ExtraBold, Arial Black, sans-serif;
+	stroke: yellow; stroke-width: 2px;
+}
+
+.avInnerDiv{
+	margin: auto;
+    width: 300px;
+}
+
+.avCircle {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  background: ghostwhite;
+  margin: 1em;
+  border-radius: 50%;
+  text-align: center;
+  display:inline-block;
+  cursor: pointer;
+}
+
+.ghostwhite{
+  background: ghostwhite;
+}
+
+.lightgrey{
+  background: lightgrey;
+}
+
+.avClear{
+  clear: both;
+}
+
+

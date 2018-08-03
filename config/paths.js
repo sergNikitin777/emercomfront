@@ -52,4 +52,6 @@ module.exports = {
   appNodeModules: resolveApp('node_modules'),
   publicUrl: getPublicUrl(resolveApp('package.json')),
   servedPath: getServedPath(resolveApp('package.json')),
+  appVendors: resolveApp('src/vendors'),
+  appMaintenanceAPIJs: resolveApp('vendors/maintenance-web-api/core/MaintenanceAPI.js')
 };

@@ -14,7 +14,7 @@ const paths = require('./paths');
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // In development, we always serve from the root. This makes config easier.
-const publicPath = '/';
+const publicPath = './';
 // `publicUrl` is just like `publicPath`, but we will provide it to our app
 // as %PUBLIC_URL% in `index.html` and `process.env.PUBLIC_URL` in JavaScript.
 // Omit trailing slash as %PUBLIC_PATH%/xyz looks better than %PUBLIC_PATH%xyz.
@@ -35,6 +35,7 @@ module.exports = {
   entry: [
     // We ship a few polyfills by default:
     require.resolve('./polyfills'),
+	"babel-polyfill", 
     // Include an alternative client for WebpackDevServer. A client's job is to
     // connect to WebpackDevServer by a socket and get notified about changes.
     // When you save a file, the client will either apply hot updates (in case
@@ -88,10 +89,16 @@ module.exports = {
     // for React Native Web.
     extensions: ['.web.js', '.js', '.json', '.web.jsx', '.jsx'],
     alias: {
-
+      './images/layers.png$': path.resolve(__dirname, '../node_modules/leaflet/dist/images/layers.png'),
+      './images/layers-2x.png$': path.resolve(__dirname, '../node_modules/leaflet/dist/images/layers-2x.png'),
+      './images/marker-icon.png$': path.resolve(__dirname, '../node_modules/leaflet/dist/images/marker-icon.png'),
+      './images/marker-icon-2x.png$': path.resolve(__dirname, '../node_modules/leaflet/dist/images/marker-icon-2x.png'),
+      './images/marker-shadow.png$': path.resolve(__dirname, '../node_modules/leaflet/dist/images/marker-shadow.png'),	
+	
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',
+	  RequestUtils: path.resolve('../vendors/request-utils-1.0.0')
     },
     plugins: [
       // Prevents users from importing files from outside of src/ (or node_modules/).
@@ -125,6 +132,32 @@ module.exports = {
           },
         ],
         include: paths.appSrc,
+		exclude: paths.appVendors,
+      },
+      {
+                test: /\.js$/,
+                include: paths.appMaintenanceAPIJs,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: [
+                            ['@babel/env', {}],
+                            ['@babel/stage-0', {
+                                pipelineProposal: 'minimal', // Необходимо для @babel/polyfill.
+                                decoratorsLegacy: true // Поддержка приватных полей классов.
+                            }]
+                        ],
+                        plugins: [
+                            ['add-module-exports', {}],
+                            ['@babel/plugin-transform-runtime', {
+                                helpers: false,
+                                polyfill: true, // Поддержка в IE 10-11: Promise, Set, Map и т.д.
+                                regenerator: true,
+                                useESModules: true
+                            }]
+                        ]
+                    }
+                }
       },
       {
         // "oneOf" will traverse all following loaders until one will
@@ -213,7 +246,7 @@ module.exports = {
                 }
               }
             ]
-          },
+          },		  
           // "file" loader makes sure those assets get served by WebpackDevServer.
           // When you `import` an asset, you get its (virtual) filename.
           // In production, they would get copied to the `build` folder.

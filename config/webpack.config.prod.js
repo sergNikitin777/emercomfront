@@ -56,7 +56,7 @@ module.exports = {
   // You can exclude the *.map files from the build during deployment.
   devtool: shouldUseSourceMap ? 'source-map' : false,
   // In production, we only want to load the polyfills and the app code.
-  entry: [require.resolve('./polyfills'), paths.appIndexJs],
+  entry: [require.resolve('./polyfills'), "babel-polyfill", paths.appIndexJs],
   output: {
     // The build folder.
     //path: paths.appBuild,
@@ -68,7 +68,7 @@ module.exports = {
     chunkFilename: 'static/js/[name].[chunkhash:8].chunk.js',
     // We inferred the "public path" (such as / or /my-project) from homepage.
     //publicPath: publicPath,
-	publicPath: '/',
+	publicPath: './',
     // Point sourcemap entries to original disk location (format as URL on Windows)
     devtoolModuleFilenameTemplate: info =>
       path
@@ -95,7 +95,7 @@ module.exports = {
 
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
-      'react-native': 'react-native-web',
+      'react-native': 'react-native-web'
     },
     plugins: [
       // Prevents users from importing files from outside of src/ (or node_modules/).
@@ -129,6 +129,7 @@ module.exports = {
           },
         ],
         include: paths.appSrc,
+		exclude: paths.appVendors,
       },
       {
         // "oneOf" will traverse all following loaders until one will
@@ -230,7 +231,7 @@ module.exports = {
                 }
               }
             ]
-          },
+          },		  
           // "file" loader makes sure assets end up in the `build` folder.
           // When you `import` an asset, you get its filename.
           // This loader don't uses a "test" so it will catch all modules

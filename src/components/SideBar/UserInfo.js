@@ -20,14 +20,17 @@ class UserInfo extends Component {
             <div className="username">
               {user.name}
             </div>
-            <div className="title">Admin</div>
+            <div className="title">Имя и фамилия</div>
           </div>
+  {/*
           <span
             onClick={() => this.setState({ isShowingUserMenu: !this.state.isShowingUserMenu })}
             className={cx("pe-7s-angle-down collapse-arrow", {
               active: isShowingUserMenu
             })}></span>
+  */}
         </div>
+  {/*		
         <Collapse in={isShowingUserMenu}>
           <ul className="nav user-nav">
             <li><a href="#">Профиль</a></li>
@@ -35,6 +38,7 @@ class UserInfo extends Component {
             <li><a href="#">Настройки</a></li>
           </ul>
         </Collapse>
+  */}		
       </div>
     );
   }

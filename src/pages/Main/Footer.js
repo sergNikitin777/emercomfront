@@ -4,6 +4,7 @@ const Footer = () => (
   <footer className="footer">
     <div className="container-fluid">
       <nav className="pull-left">
+	  {/*
         <ul>
           <li>
             <a href="#">
@@ -26,9 +27,10 @@ const Footer = () => (
                   </a>
           </li>
         </ul>
+		*/}
       </nav>
       <p className="copyright pull-right">
-        © 2017 <a href="http://jslancer.com">JSLancer</a>, made with love for a better web
+        © 2018 <a href="http://sait.com">Компания</a>, копирайты
       </p>
     </div>
   </footer>

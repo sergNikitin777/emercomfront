@@ -22,6 +22,7 @@ import Charts from '../Charts';
 import Calendar from '../Calendar';
 import Tables from '../Tables';
 
+import Users from '../Users';
 import Desktop from '../Desktop';
 import Contracts from '../Contracts';
 import Equipment from '../Equipment';
@@ -29,6 +30,9 @@ import Tasks from '../Tasks';
 import Companies from '../Companies';
 import Reporting from '../Reporting';
 import Employees from '../Employees';
+import Points from '../Points';
+//import Map from '../../containers/MapContainer';
+import Map from '../Map';
 
 
 
@@ -59,7 +63,10 @@ const Main = ({
 		  <Route path="/companies" component={Companies} />		  
 		  <Route path="/reporting" component={Reporting} />		  
 		  <Route path="/employees" component={Employees} />	
+		  <Route path="/points" component={Points} />	
+		  <Route path="/map" component={Map} />	
           <Route exact path="/" component={Desktop} />
+		  <Route exact path="/users" component={Users} />
 		  
 		  
           <Route path="/components" component={Components} />
